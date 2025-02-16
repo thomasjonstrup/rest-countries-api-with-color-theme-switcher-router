@@ -10,7 +10,7 @@ export const RootComponent = () => {
 	return (
 		<div className="bg-very-light-gray dark:bg-very-dark-blue text-very-dark-blue dark:text-white flex flex-col min-h-screen">
 			<header className='shadow-custom-2'>
-				<div className='mx-auto container p-2 flex justify-between max-md'>
+				<div className='mx-auto container p-4 flex justify-between max-md items-center'>
 					<Link to='/' className='[&.active]:font-bold'>
 						Where in the world?
 					</Link>
