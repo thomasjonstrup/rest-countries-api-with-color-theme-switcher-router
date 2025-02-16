@@ -1,5 +1,6 @@
 import axios from 'redaxios'
 import { queryOptions } from '@tanstack/react-query'
+import { fieldList } from './lib/constants'
 
 export class NotFoundError extends Error {}
 
@@ -10,6 +11,10 @@ type CountryType = {
         alt: string
     },
 	cca2: string,
+	cca3: string,
+	population: string,
+	capital: string,
+	region: string,
 	flag: string,
     name: {
         common: "South Georgia",
@@ -27,7 +32,7 @@ const fetchCountries = async () => {
   console.info('Fetching posts...')
   await new Promise((r) => setTimeout(r, 500))
   return axios
-    .get<Array<CountryType>>('https://restcountries.com/v3.1/all?fields=name,flags,flag,cca2')
+    .get<Array<CountryType>>(`https://restcountries.com/v3.1/all?fields=${fieldList.join(',')}`)
     .then((r) => r.data.slice(0, 10))
 }
 
@@ -40,7 +45,7 @@ const fetchCountryDetails = async (countryId: string) => {
 
 
   if (!post) {
-    throw new NotFoundError(`Post with id "${countryId}" not found!`)
+    throw new NotFoundError(`Country with id "${countryId}" not found!`)
   }
 
   return post

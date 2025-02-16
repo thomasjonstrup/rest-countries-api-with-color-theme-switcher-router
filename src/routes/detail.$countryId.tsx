@@ -30,10 +30,3 @@ function RouteComponent() {
 		</div>
 	)
 }
-
-
-/* getParentRoute: () => RootComponent,
-  path: '/',
-  component: Index,
-  loader: ({ context: { queryClient } }) =>
-	queryClient.ensureQueryData(postsQueryOptions), */

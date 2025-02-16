@@ -90,6 +90,26 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  --color-dark-blue: hsl(209, 23%, 22%);
+  --color-very-dark-blue: hsl(207, 26%, 17%);
+  --color-very-dark-blue-light-text: hsl(200, 15%, 8%);
+  --color-dark-gray: hsl(0, 0%, 52%);
+  --color-very-light-gray: hsl(0, 0%, 98%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --shadow-custom: 0 0 7px 2px rgba(0, 0, 0, 0.0294);
+  --shadow-custom-2: 0 2px 4px 0 rgba(0, 0, 0, 0.0562);
+
+/*         boxShadow: {
+            'custom': '0 0 7px 2px rgba(0,0,0,0.0294)',
+              'custom-2': '0 2px 4px 0 rgba(0,0,0,0.0562)',
+              'custom-3': '0 2px 9px 0 rgba(0,0,0,0.0532)',
+              'custom-4': '0 0 7px 0 rgba(0,0,0,0.2931)',
+              'custom-5': '0 0 4px 1px rgba(0,0,0,0.1049)',
+          } */
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
