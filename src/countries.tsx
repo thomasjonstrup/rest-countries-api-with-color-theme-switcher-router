@@ -27,7 +27,7 @@ const fetchCountries = async () => {
   console.info('Fetching posts...')
   await new Promise((r) => setTimeout(r, 500))
   return axios
-    .get<Array<CountryType>>('https://restcountries.com/v3.1/all?fields=name,flags,flag')
+    .get<Array<CountryType>>('https://restcountries.com/v3.1/all?fields=name,flags,flag,cca2')
     .then((r) => r.data.slice(0, 10))
 }
 
