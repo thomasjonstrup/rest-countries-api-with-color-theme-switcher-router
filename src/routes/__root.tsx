@@ -6,7 +6,7 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { Moon } from "lucide-react";
 
 export const RootComponent = () => {
-	const {isDarkMode, toggleDarkMode} = useDarkMode();
+	const {toggleDarkMode} = useDarkMode();
 	return (
 		<div className="bg-very-light-gray dark:bg-very-dark-blue text-very-dark-blue dark:text-white flex flex-col min-h-screen">
 			<header className='shadow-custom-2'>
@@ -23,8 +23,8 @@ export const RootComponent = () => {
 				<Outlet />
 			</div>
 			<footer>
-				<div className='p-2 flex gap-2'>
-					<div className="text-center text-xs">Challenge by <a className="text-red" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a className="text-red" href="https://github.com/thomasjonstrup">Thomas Jonstrup</a>.</div>
+				<div className='p-2 flex gap-2 justify-center'>
+					<p className="text-center text-xs">Challenge by <a className="text-red" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a className="text-red" href="https://github.com/thomasjonstrup">Thomas Jonstrup</a>.</p>
 				</div>
 			</footer>
 			<TanStackRouterDevtools />

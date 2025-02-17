@@ -10,8 +10,8 @@ export const Route = createFileRoute('/detail/$countryId')({
 
 function RouteComponent() {
 	const { countryId } = Route.useParams();
+	//const { data, isFetching } = useSuspenseQuery(postQueryOptions(countryId))
 	const { data, isFetching } = useSuspenseQuery(postQueryOptions(countryId))
-	console.log("🚀 ~ Index ~ postQuery:", data)
 
 	if (isFetching) {
 		return <div>Loading...</div>
