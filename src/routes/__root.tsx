@@ -19,7 +19,7 @@ export const RootComponent = () => {
 						<span>Dark Mode</span></Button>
 				</div>
 			</header>
-			<div className="flex-1 mx-auto container max-md">
+			<div className="flex-1 mx-auto container max-w-[80em]">
 				<Outlet />
 			</div>
 			<footer>
