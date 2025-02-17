@@ -2,8 +2,21 @@ import { Button } from '@/components/ui/button';
 import { useDarkMode } from '@/lib/hooks';
 import { QueryClient } from '@tanstack/react-query';
 import { createRootRouteWithContext, Link, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+
 import { Moon } from "lucide-react";
+import { lazy, Suspense } from 'react';
+
+const TanStackRouterDevtools =
+  process.env.NODE_ENV === 'production'
+    ? () => null // Render nothing in production
+    : lazy(() =>
+        // Lazy load in development
+        import('@tanstack/router-devtools').then((res) => ({
+          default: res.TanStackRouterDevtools,
+          // For Embedded Mode
+          // default: res.TanStackRouterDevtoolsPanel
+        })),
+      )
 
 export const RootComponent = () => {
 	const {toggleDarkMode} = useDarkMode();
@@ -27,7 +40,9 @@ export const RootComponent = () => {
 					<p className="text-center text-xs">Challenge by <a className="text-red" href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. Coded by <a className="text-red" href="https://github.com/thomasjonstrup">Thomas Jonstrup</a>.</p>
 				</div>
 			</footer>
-			<TanStackRouterDevtools />
+			<Suspense fallback={null}>
+				<TanStackRouterDevtools />
+			</Suspense>
 		</div>
 	)
 }
