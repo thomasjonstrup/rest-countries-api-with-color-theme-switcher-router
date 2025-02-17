@@ -9,7 +9,7 @@ export const RootComponent = () => {
 	const {toggleDarkMode} = useDarkMode();
 	return (
 		<div className="bg-very-light-gray dark:bg-very-dark-blue text-very-dark-blue dark:text-white flex flex-col min-h-screen">
-			<header className='shadow-custom-2'>
+			<header className='shadow-custom-2 max-w-[80em]'>
 				<div className='mx-auto container p-4 flex justify-between max-md items-center'>
 					<Link to='/' className='[&.active]:font-bold'>
 						Where in the world?
